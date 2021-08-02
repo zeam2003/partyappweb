@@ -1,0 +1,13 @@
+button {
+    padding: 0.8rem;
+    background-color: aliceblue;
+}
+
+.menu:hover {
+    background-color: #fdaffa;
+}
+
+.menu,
+.puntero {
+    cursor: pointer;
+}

@@ -1,10 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar/NavBar'
 
-import Eje from './components/Button';
+import React from 'react';
 
 function App() {
-    return (console.log('hola'))
+    return ( 
+        <>
+            <NavBar/>
+        </>
+    );
 }
 
 export default App;
