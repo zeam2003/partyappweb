@@ -1,0 +1,15 @@
+.icono-cart {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.icono-cart-cont {
+    width: 25px;
+    border-bottom: 1px cadetblue solid;
+}
+
+.icono-cart-cont:hover {
+    border-bottom: 1px red solid;
+    transition: all 0.8s ease-in-out;
+}
