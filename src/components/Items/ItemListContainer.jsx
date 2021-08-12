@@ -1,3 +1,4 @@
+import ItemList from './ItemList'
 import './ItemListContainer.css'
 
 export default function ItemListContainer(props) {
@@ -5,6 +6,9 @@ export default function ItemListContainer(props) {
         <>
             <div>
                 <h1 className="tamaño-25">{props.text}</h1>
+            </div>
+            <div>
+                <ItemList/>
             </div>
         </>
     )
