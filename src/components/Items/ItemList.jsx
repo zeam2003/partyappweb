@@ -2,20 +2,19 @@ import { useEffect, useState } from "react";
 import Item from "./Item";
 
 const getData = () => {
-    setTimeout(() => {
-        return fetch({
-           
-            id: '1',
-            title: 'Cinturon',
-            description: 'Cuero Vaca Negro',
-            price: 50,
-            pictureUrl: 'http://www.youtube.com'        
-        }).then( response => {
-            //console.log(response);
+
+    return fetch('https://api.mercadolibre.com/sites/MLA/search?q=goku')
+    .then(response => {
+        return response.json()
+    })
+    /* setTimeout(() => {
+         fetch('https://api.mercadolibre.com/sites/MLA/search?q=goku'
+                 
+        ).then( response => {
+            console.log(response);
             return response.json()
-            
         })
-    }, 1000);
+    }, 1000); */
     
 } 
 
@@ -24,24 +23,22 @@ const getData = () => {
 
 export default function ItemList() {
 
-    const [value, setValue] = useState([])
+    const [itemList, setItemList] = useState([])
 
-    useEffect( async () => {
+    useEffect(async () => {
         const data = await getData()
         const arr = []
+        // console.log(data);
         data.results.forEach( item => {
-            
-            arr.push(<Item key={item.id} title={item.title} description={item.description} price={item.price} pictureUrl={item.pictureUrl}/>)
-            
+            arr.push(<Item key={item.id} title={item.title} description={item.currency_id} price={item.price} pictureUrl={item.thumbnail}/>)
         })
-        setValue(arr)
-    },[])
+        setItemList(arr)
+    }, [])
 
     
     return(
         <>
-        {value}
-    
+            {itemList}
         </>
     )   
 }
