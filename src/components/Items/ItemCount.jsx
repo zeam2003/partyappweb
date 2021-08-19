@@ -1,73 +1,46 @@
-import { useState } from 'react'
-import './ItemCount.css'
+import React, { useState } from 'react'
+import {Button, Container, Row } from 'react-bootstrap'
 
-const useCounter = (initialValue = 1, stock = 10 ) => {
-    const [count, setCount] = useState(initialValue)
-   
 
-    const increment = () => {
-            if (count < stock ) {
-                setCount(count+1)
+const ItemCount = (props) => {
+
+    const [ stock, setStock ] = useState(props.stock)
+    const [ unidades, setUnidades ] = useState(0)
+
+    const [show, setShow] = useState(false);
+
+    const handleStock = {
+        sumaStock:() => {
+            if(stock === 0 ) {
+                alert('No hay mas Stock disponible')
+            } else {
+                setUnidades(unidades+1)
+                setStock(stock-1)
             }
-        
-    }
-
-    const decrement = () => {
-        if ( count > 0 ) setCount(count-1)
-    }
-
-   
-
-    return {
-        count,
-        increment,
-        decrement,
-        stock
-    }
-
-   
-}
-
-
-
-
-
-export default function ItemCount( { onAdd = () => {}}) {
-
-    const [agregadoCarrito, setAgregadoCarrito] = useState(false)
-
-    const handleOnAddCart = ( event ) => {
-        if( count > 0 ) {
-           
-            setAgregadoCarrito(true)
-            console.log(agregadoCarrito);
-            onAdd(event)
-            console.log(stock);
-            
-            
+        },
+        restaStock:() => {
+            if(unidades === 0) {
+               alert('Debes comprar al menos 1 unidad')
+            } else {
+                setUnidades(unidades-1)
+                setStock(stock+1)
+            }
         }
     }
 
-    const handleReset = (event ) => {
-        setAgregadoCarrito(false)
-        onAdd(event)
 
-
-    }
-    
-
-    const {count, stock, increment, decrement} = useCounter()
     return(
-        <>
-            <button onClick={() => decrement()}>-</button>
-            <button onClick={() => increment()}>+</button>
-            <div>{count}</div>
-            <div><h4>Disponibles: {stock}</h4></div>
-           
-            {!agregadoCarrito && <button onClick={handleOnAddCart}>Agregar al Carrito</button>}
-            {agregadoCarrito && <button onClick={handleReset}>Deshacer</button>}
-      
-        </>
+        <Container fluid>
+            <Row>
+                <div className="text-center">
+                    <Button onClick={handleStock.sumaStock} disabled={stock === '0'} variant="outline-secondary">+</Button>{' '}
+                    <p>{unidades}</p>
+                    <Button onClick={handleStock.restaStock} disabled={stock === '0'} variant="outline-secondary">-</Button>{' '}
+                    <p>Stock Disponible: {stock}</p>
+                    </div>
+            </Row>
+        </Container> 
     )
-
 }
+
+export default ItemCount

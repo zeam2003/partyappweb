@@ -1,21 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/Items/ItemListContainer'
-import ItemCount from './components/Items/ItemCount'
+import NavBar from '../src/components/NavBar/NavBar'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 
 
 function App() {
 
 
     return ( 
-        <>
-        <NavBar / >
-        <div >
-            <ItemListContainer text = "Tu carrito esta vacio" / >
-        </div>
-        <ItemCount onAdd={() => console.log('agrego')} />
-        </>
+        <BrowserRouter>
+        <div>
+        <NavBar />
+        <Switch>
+            <Route path="/" exact>
+                <ItemListContainer text = "Tu carrito esta vacio" />
+            </Route>
+            <Route path="/catering" exact>
+                <ItemListContainer text = "Tu carrito esta vacio" />
+            </Route>
+            
+        </Switch>
+
+        </div> 
+        </BrowserRouter>
+
     );
 }
 
