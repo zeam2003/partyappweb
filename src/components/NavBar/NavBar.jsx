@@ -12,21 +12,20 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto fuente-Nav">
-            <Nav.Link ><Link to="/"></Link>Inicio</Nav.Link>
+            <Nav.Link as={Link} to={"/"} >Inicio</Nav.Link>
             <NavDropdown title="Categorías" id="navbarScrollingDropdown">
-    
-            <NavDropdown.Item ><Link to="/catering">Catering</Link></NavDropdown.Item>
-            <NavDropdown.Item ><Link to="/cotillon">Cotillon</Link></NavDropdown.Item>
-            <NavDropdown.Item ><Link to="/empanadas">Empanadas</Link></NavDropdown.Item>
-            <NavDropdown.Item ><Link to="/pizzas">Pizzas</Link></NavDropdown.Item>
-            <NavDropdown.Item ><Link to="/tortas">Tortas</Link></NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/catering"}>Catering</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/cotillon"}>Cotillon</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/empanadas"}>Empanadas</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/pizzas"}>Pizzas</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/tortas"}>Tortas</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link ><Link to="/">Mis Pedidos</Link></Nav.Link>
-            <Nav.Link ><Link to="/">Tu Negocio</Link></Nav.Link>
-            <Nav.Link ><Link to="/">Contacto</Link></Nav.Link>
+            <Nav.Link  as={Link} to={"/mispedidos"}>Mis Pedidos</Nav.Link>
+            <Nav.Link as={Link} to={"/tunegocio"}>Tu Negocio</Nav.Link>
+            <Nav.Link as={Link} to={"/contacto"}>Contacto</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Ingresar</Nav.Link>
+            <Nav.Link as={Link} to={"/ingresar"}>Ingresar</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         </Container>

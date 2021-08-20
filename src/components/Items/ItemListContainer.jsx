@@ -4,6 +4,8 @@ import ItemList from '../Items/itemList/ItemList'
 import ItemDetailContainer from './itemDetailContainer/ItemDetailContainer'
 
 export default function ItemListContainer(props) {
+
+    
     return (
         <>
             <div className="text-center">
@@ -11,7 +13,7 @@ export default function ItemListContainer(props) {
             </div>
             <ItemCount stock='5'></ItemCount>
             <ItemList/>
-            <ItemDetailContainer />
+            {/*<ItemDetailContainer />*/}
         </>
     )
 }

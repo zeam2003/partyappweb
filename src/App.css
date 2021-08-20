@@ -23,3 +23,9 @@
 #navbarScrollingDropdown::after {
     display: none;
 }
+
+.spinner-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

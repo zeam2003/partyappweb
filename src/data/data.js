@@ -3,7 +3,7 @@ const data = [{
         nombre: 'Super Brownie',
         desc: 'Brownie con todo lo que te imaginas y mas...',
         precio: '1000',
-        categoria: 'Tortas',
+        categoria: 'tortas',
         stock: '15',
         negocio: 'Pepe Tortas',
         imagen: './iamges/tortabrownie.jpg'
@@ -13,7 +13,7 @@ const data = [{
         nombre: 'Torta Tencación',
         desc: 'Capas de Chocolate!',
         precio: '1200',
-        categoria: 'Tortas',
+        categoria: 'tortas',
         stock: '12',
         negocio: 'Tor-tita',
         imagen: './iamges/tortatentacion.jpg'
@@ -23,7 +23,7 @@ const data = [{
         nombre: 'Cheese Cake',
         desc: 'Estilo Americana',
         precio: '1600',
-        categoria: 'Tortas',
+        categoria: 'tortas',
         stock: '5',
         negocio: 'Delicadas',
         imagen: './iamges/cheesecake.jpg'
@@ -33,7 +33,7 @@ const data = [{
         nombre: 'Jamon y Morrones',
         desc: 'Clasica Jamon y Morrones',
         precio: '750',
-        categoria: 'Pizzas',
+        categoria: 'pizzas',
         stock: '60',
         negocio: 'Don Pizza',
         imagen: './iamges/jym.jpg'
@@ -43,7 +43,7 @@ const data = [{
         nombre: 'Muzzarella',
         desc: 'Pura Muzza',
         precio: '700',
-        categoria: 'Pizzas',
+        categoria: 'pizzas',
         stock: '100',
         negocio: 'Don Pizza',
         imagen: './iamges/muzza.jpg'
@@ -53,7 +53,7 @@ const data = [{
         nombre: 'Mexicana de Carne',
         desc: 'Base de tomate y queso cubierta con carne picada, cebolla y rodajas de aguacate',
         precio: '1200',
-        categoria: 'Pizzas',
+        categoria: 'pizzas',
         stock: '20',
         negocio: 'Don Pizza',
         imagen: './iamges/mc.jpg'
@@ -63,7 +63,7 @@ const data = [{
         nombre: 'Pizza Blanca',
         desc: 'No lleva tomate, ni carne, pero está llena de sabor y personalidad gracias al conjunto de quesos que lleva',
         precio: '1200',
-        categoria: 'Pizzas',
+        categoria: 'pizzas',
         stock: '20',
         negocio: 'Don Pizza',
         imagen: './iamges/mc.jpg'
@@ -73,7 +73,7 @@ const data = [{
         nombre: 'Coca Cola',
         desc: 'Clasica',
         precio: '180',
-        categoria: 'Bebidas',
+        categoria: 'bebidas',
         stock: '180',
         negocio: 'Carrefour',
         imagen: './iamges/cc.jpg'
@@ -83,7 +83,7 @@ const data = [{
         nombre: 'Coca Cola',
         desc: 'Light',
         precio: '190',
-        categoria: 'Bebidas',
+        categoria: 'bebidas',
         stock: '150',
         negocio: 'Carrefour',
         imagen: './iamges/ccl.jpg'
@@ -93,7 +93,7 @@ const data = [{
         nombre: 'Quilmes Cristal',
         desc: 'Cerveza Rubia',
         precio: '150',
-        categoria: 'Bebidas',
+        categoria: 'bebidas',
         stock: '200',
         negocio: 'Carrefour',
         imagen: './iamges/cq.jpg'
@@ -103,7 +103,7 @@ const data = [{
         nombre: 'Gatorade Naranja',
         desc: 'Naranja',
         precio: '155',
-        categoria: 'Bebidas',
+        categoria: 'bebidas',
         stock: '80',
         negocio: 'Carrefour',
         imagen: './iamges/gn.jpg'
@@ -113,7 +113,7 @@ const data = [{
         nombre: 'Carne',
         desc: 'Carne Clasica',
         precio: '1200',
-        categoria: 'Empanadas',
+        categoria: 'empanadas',
         stock: '120',
         negocio: 'El Noble',
         imagen: './iamges/cc.jpg'
@@ -123,7 +123,7 @@ const data = [{
         nombre: 'Carne Cuchillo',
         desc: 'Carne Cortada a Cuchillo',
         precio: '1200',
-        categoria: 'Empanadas',
+        categoria: 'empanadas',
         stock: '120',
         negocio: 'El Noble',
         imagen: './iamges/ccc.jpg'
@@ -133,7 +133,7 @@ const data = [{
         nombre: 'Carne picante',
         desc: 'Carne muy picante',
         precio: '1200',
-        categoria: 'Empanadas',
+        categoria: 'empanadas',
         stock: '120',
         negocio: 'El Noble',
         imagen: './iamges/cp.jpg'
@@ -143,7 +143,7 @@ const data = [{
         nombre: 'Sandwich de Miga Simples 24u',
         desc: 'Simples Jamon y Queso',
         precio: '1000',
-        categoria: 'Catering',
+        categoria: 'catering',
         stock: '120',
         negocio: 'La Fabrica',
         imagen: './iamges/smjyqs24.jpg'
@@ -153,7 +153,7 @@ const data = [{
         nombre: 'Sandwich de Miga Triples 24u',
         desc: 'Simples Jamon y Queso',
         precio: '1800',
-        categoria: 'Catering',
+        categoria: 'catering',
         stock: '120',
         negocio: 'La Fabrica',
         imagen: './iamges/smjyqt24.jpg'
@@ -163,7 +163,7 @@ const data = [{
         nombre: 'Mini Sandwich Gourmet',
         desc: 'Pollo, queso gruyere, chutney de cebolla morada, mix de hojas verdes y cream cheese en baguetín',
         precio: '1700',
-        categoria: 'Catering',
+        categoria: 'catering',
         stock: '120',
         negocio: 'La Fabrica',
         imagen: './iamges/msg.jpg'
@@ -173,7 +173,7 @@ const data = [{
         nombre: 'Combo Cotillon Luminoso',
         desc: 'Led Neon 50 Personas',
         precio: '1999',
-        categoria: 'Cotillon',
+        categoria: 'cotillon',
         stock: '10',
         negocio: 'CyP',
         imagen: './iamges/ccl.jpg'
@@ -183,7 +183,7 @@ const data = [{
         nombre: 'Kit Decoración Cumpleaños',
         desc: 'Varios Modelos',
         precio: '1679',
-        categoria: 'Cotillon',
+        categoria: 'cotillon',
         stock: '4',
         negocio: 'CyP',
         imagen: './iamges/kdc.jpg'
@@ -193,7 +193,7 @@ const data = [{
         nombre: 'Cortina Metalizada',
         desc: 'Fluo, Rosa y Amarillo ',
         precio: '359',
-        categoria: 'Cotillon',
+        categoria: 'cotillon',
         stock: '11',
         negocio: 'CyP',
         imagen: './iamges/cm.jpg'

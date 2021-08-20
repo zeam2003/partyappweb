@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import data from '../../../data/data'
 import ItemDetail from '../../Items/itemDetailContainer/itemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
 
 
 
@@ -8,6 +9,9 @@ const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState([])
     const [cargando, setCargando] = useState(true)
+
+    const  {id} = useParams()
+    
 
     useEffect(() => {
         const productos = () => {
@@ -18,7 +22,7 @@ const ItemDetailContainer = () => {
             })
         }
         productos().then((items) => {
-            const producto = items.find(producto => producto.id === '1')
+            const producto = items.find(producto => producto.id === id)
             setProducto(producto)
             // console.log(items);
             setCargando(false)
