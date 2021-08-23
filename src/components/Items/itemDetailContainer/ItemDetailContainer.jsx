@@ -24,6 +24,7 @@ const ItemDetailContainer = () => {
         productos().then((items) => {
             const producto = items.find(producto => producto.id === id)
             setProducto(producto)
+            console.log(id);
             // console.log(items);
             setCargando(false)
         })

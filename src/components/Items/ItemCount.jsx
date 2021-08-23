@@ -1,21 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Button, Container, Row } from 'react-bootstrap'
 
 
-const ItemCount = (props) => {
-
-    const [ stock, setStock ] = useState(props.stock)
+export default function ItemCount ({ stock, onAdd = () => {}}) {
+    const [ stockPropio, setStock ] = useState(stock)
     const [ unidades, setUnidades ] = useState(0)
-
-    const [show, setShow] = useState(false);
 
     const handleStock = {
         sumaStock:() => {
-            if(stock === 0 ) {
+            if(stockPropio === 0 ) {
                 alert('No hay mas Stock disponible')
             } else {
                 setUnidades(unidades+1)
-                setStock(stock-1)
+                setStock(stockPropio-1)
+                
             }
         },
         restaStock:() => {
@@ -23,24 +21,32 @@ const ItemCount = (props) => {
                alert('Debes comprar al menos 1 unidad')
             } else {
                 setUnidades(unidades-1)
-                setStock(stock+1)
+                setStock(stockPropio+1)
+                
             }
         }
+        
     }
+
+    useEffect(() => {
+        onAdd(unidades)
+        console.log(unidades)
+    }, [unidades])
 
 
     return(
         <Container fluid>
             <Row>
                 <div className="text-center">
-                    <Button onClick={handleStock.sumaStock} disabled={stock === '0'} variant="outline-secondary">+</Button>{' '}
-                    <p>{unidades}</p>
-                    <Button onClick={handleStock.restaStock} disabled={stock === '0'} variant="outline-secondary">-</Button>{' '}
+                    <Button onClick={handleStock.sumaStock}  disabled={stockPropio === '0'} variant="outline-secondary">+</Button>
+                    
+                    <div className="inlineB counter1"><span>{unidades}</span>  </div>{''}
+                    <Button onClick={handleStock.restaStock}  disabled={stockPropio === '0'} variant="outline-secondary">-</Button>{' '}
                     <p>Stock Disponible: {stock}</p>
+                    <p>{unidades}</p>
                     </div>
             </Row>
         </Container> 
     )
 }
 
-export default ItemCount

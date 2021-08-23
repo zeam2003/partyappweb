@@ -6,7 +6,7 @@ export default function NavBar() {
         <>
         <Navbar collapseOnSelect className="shadow-sm rounded"  expand="lg" variant="light">
         <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand as={Link} to={"/"} >
             <img src={`${process.env.PUBLIC_URL}/assets/images/logo_280x120v3.png`}  className="d-inline-block align-top" alt="Party-App" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -25,6 +25,7 @@ export default function NavBar() {
             <Nav.Link as={Link} to={"/contacto"}>Contacto</Nav.Link>
           </Nav>
           <Nav>
+            <Nav.Link as={Link} to={"/cart"}>Cart</Nav.Link>
             <Nav.Link as={Link} to={"/ingresar"}>Ingresar</Nav.Link>
           </Nav>
         </Navbar.Collapse>

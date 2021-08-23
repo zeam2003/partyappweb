@@ -29,3 +29,14 @@
     align-items: center;
     justify-content: center;
 }
+
+.inlineB {
+    display: inline-block;
+}
+
+.counter1 {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: deeppink;
+    font-size: 1.5rem;
+}

@@ -2,7 +2,7 @@ import './CartWidget.css'
 import ShoppingCart from '../../assets/icons/shopping-cart.svg'
 
 
-export default function Cart(props) {
+export default function Cart2(props) {
 
     return ( <>
         <div className="icono-cart-cont">
