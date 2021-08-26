@@ -1,7 +1,8 @@
 import ItemCount from '../../ItemCount'
 import { Card, Button } from 'react-bootstrap'
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import { useHistory } from "react-router-dom";
+import { CustomContext } from '../../../Contexts/CartContext';
 
 export default function ItemDetail ({nombre, desc, precio, categoria, stock, negocio}) {
 
@@ -10,6 +11,8 @@ export default function ItemDetail ({nombre, desc, precio, categoria, stock, neg
     const [cartBuyVIsible, setCartBuyVisible] = useState(true)
     const [itemsCount, setItemsCount] = useState(0)
     const history = useHistory()
+    const obj = useContext(CustomContext)
+
 
     const onAdd = (count) => {
         
@@ -19,7 +22,7 @@ export default function ItemDetail ({nombre, desc, precio, categoria, stock, neg
     }
 
     const onAddToCart = () => {
-        if( itemsCount != 0) {
+        if( itemsCount !== 0) {
             setItemVisible(false)
             setCartButtonsVisible(false)
             setCartBuyVisible(false)
@@ -59,7 +62,7 @@ export default function ItemDetail ({nombre, desc, precio, categoria, stock, neg
             {cartButtonsVisible && <Button onClick={onAddToCart} className="inlineB" variant="warning">Agregar al carrito</Button>}
             
             {!cartBuyVIsible && <Button onClick={onFinishBuy}>Finalizar Compra</Button>}
-            
+            {obj.item}
             {itemsCount}
         </Card.Body>
         </Card>

@@ -8,51 +8,66 @@ import ItemList from './components/Items/itemList/ItemList';
 import SpinnerGlobal from './components/varios/Spiner';
 import Cart from './components/Carts/Cart'
 import Inicio from './components/Inicio/Inicio'
+import { CustomContext, listado } from './components/Contexts/CartContext';
+import { useState } from 'react';
 
 
+
+    
 function App() {
 
+    const [dataCart, setDataCart] = useState(listado)
+
+    const setDataIn = ( item ) => {
+        setDataCart({
+            ...dataCart,
+            hayAlgo: true,
+            item: 'Pollo',
+            cantidad: 1
+        })
+    }
 
     return ( 
-        <BrowserRouter>
-        <div>
-        <NavBar />
-        <Switch>
-            <Route path="/" exact>
-               <Inicio />
-            </Route>
-            
-            <Route path="/mispedidos" exact>
-                <ItemListContainer text = "Mis Pedidos" />
-            </Route>
-            <Route path="/tunegocio" exact>
-                <ItemListContainer text = "Tu Negocio" />
-            </Route>
-            <Route path="/contacto" exact component={SpinnerGlobal}>
-                <ItemListContainer text = "Contacto" />
-            </Route>
+        <CustomContext.Provider value={{dataCart, setDataIn}}>
+            <BrowserRouter>
+            <div>
+            <NavBar />
+            <Switch>
+                <Route path="/" exact>
+                <Inicio />
+                </Route>
+                
+                <Route path="/mispedidos" exact>
+                    <ItemListContainer text = "Mis Pedidos" />
+                </Route>
+                <Route path="/tunegocio" exact>
+                    <ItemListContainer text = "Tu Negocio" />
+                </Route>
+                <Route path="/contacto" exact component={SpinnerGlobal}>
+                    <ItemListContainer text = "Contacto" />
+                </Route>
 
-            <Route path="/cart" exact>
-                <Cart/>
-            </Route>
+                <Route path="/cart" exact>
+                    <Cart/>
+                </Route>
 
-            <Route path="/ingresar" exact>
-                <ItemListContainer text = "Ingresar" />
-            </Route>
-            <Route path="/:categoria/" exact component={SpinnerGlobal}>
-                <ItemList text = "Por id" />
-            </Route>
-            <Route path="/:categoria/:id" exact>
-                <ItemDetailContainer text = "Por id" />
-            </Route>
-            
+                <Route path="/ingresar" exact>
+                    <ItemListContainer text = "Ingresar" />
+                </Route>
+                <Route path="/:categoria/" exact component={SpinnerGlobal}>
+                    <ItemList text = "Por id" />
+                </Route>
+                <Route path="/:categoria/:id" exact>
+                    <ItemDetailContainer text = "Por id" />
+                </Route>
+                
 
 
-        </Switch>
+            </Switch>
 
-        </div> 
-        </BrowserRouter>
-
+            </div> 
+            </BrowserRouter>
+        </CustomContext.Provider>
     );
 }
 
