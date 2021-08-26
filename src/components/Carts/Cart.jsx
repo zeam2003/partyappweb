@@ -11,7 +11,8 @@ export default function Cart() {
             
             <div className="text-center">
                 <h1 className="tamaño-25">Hola Cart</h1>
-                <p>item: {value}</p> 
+                <p>item: {value.item}</p> 
+                <p>cantidad: {value.cantidad}</p> 
             </div>
             
             

@@ -8,27 +8,18 @@ import ItemList from './components/Items/itemList/ItemList';
 import SpinnerGlobal from './components/varios/Spiner';
 import Cart from './components/Carts/Cart'
 import Inicio from './components/Inicio/Inicio'
-import { CustomContext, listado } from './components/Contexts/CartContext';
+import { CustomContext, listado, carritoCompras } from './components/Contexts/CartContext';
 import { useState } from 'react';
+
 
 
 
     
 function App() {
 
-    const [dataCart, setDataCart] = useState(listado)
-
-    const setDataIn = ( item ) => {
-        setDataCart({
-            ...dataCart,
-            hayAlgo: true,
-            item: 'Pollo',
-            cantidad: 1
-        })
-    }
 
     return ( 
-        <CustomContext.Provider value={{dataCart, setDataIn}}>
+        <CustomContext.Provider value={listado}>
             <BrowserRouter>
             <div>
             <NavBar />

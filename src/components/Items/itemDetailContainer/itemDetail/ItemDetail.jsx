@@ -2,7 +2,7 @@ import ItemCount from '../../ItemCount'
 import { Card, Button } from 'react-bootstrap'
 import { useState,useContext } from 'react'
 import { useHistory } from "react-router-dom";
-import { CustomContext } from '../../../Contexts/CartContext';
+import { CustomContext, listado } from '../../../Contexts/CartContext';
 
 export default function ItemDetail ({nombre, desc, precio, categoria, stock, negocio}) {
 
@@ -10,6 +10,7 @@ export default function ItemDetail ({nombre, desc, precio, categoria, stock, neg
     const [cartButtonsVisible, setCartButtonsVisible] = useState(true)
     const [cartBuyVIsible, setCartBuyVisible] = useState(true)
     const [itemsCount, setItemsCount] = useState(0)
+
     const history = useHistory()
     const obj = useContext(CustomContext)
 
