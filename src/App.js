@@ -46,7 +46,7 @@ function App() {
                     <ItemListContainer text = "Ingresar" />
                 </Route>
                 <Route path="/:categoria/" exact component={SpinnerGlobal}>
-                    <ItemList text = "Por id" />
+                    <ItemList text = "categoria" />
                 </Route>
                 <Route path="/:categoria/:id" exact>
                     <ItemDetailContainer text = "Por id" />

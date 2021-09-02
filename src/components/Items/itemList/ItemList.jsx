@@ -4,6 +4,7 @@ import Item from '../../Items/itemList/item/Item'
 
 import { useParams } from 'react-router-dom'
 import SpinnerGlobal from '../../varios/Spiner'
+import { getCollection, getDocs } from '../../../firebase'
 
 
 const ItemList = () => {
@@ -13,6 +14,18 @@ const ItemList = () => {
     const [productos, setProductos] = useState([])
     const [cargando, setCargando] = useState(true)
 
+    useEffect(() => {
+        async function fetchData() {
+            const q = getCollection('items')
+            const querySnapshot = await getDocs(q)
+            querySnapshot.forEach((doc) => {
+                console.log(doc.id);
+                console.log(doc.data);
+            });
+        }
+        fetchData()
+    },[])
+/* 
     useEffect(() => {
         const productos = () => {
             return new Promise((resolve, reject) => {
@@ -36,15 +49,15 @@ const ItemList = () => {
             
         })
     },[categoria])
-
+ */
     return(
         <>
-        {cargando ? <SpinnerGlobal></SpinnerGlobal>
+       /*  {cargando ? <SpinnerGlobal></SpinnerGlobal>
              :
         productos.map((producto)=> 
             <Item key={producto.id} nombre={producto.nombre} desc={producto.desc} precio={producto.precio} categoria={producto.categoria} stock={producto.stock} id={producto.id}/>
         )
-        }
+        } */
         </>
     )
 }
