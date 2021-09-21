@@ -1,8 +1,12 @@
 import ItemCount from '../../ItemCount'
 import { Card, Button,Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useHistory } from "react-router-dom";
+import { AppCacheContext } from '../../../../context/CacheProvider';
+
+
+
 
 export default function Item({nombre, desc, precio, categoria, imagen, stock, id}) {
     const [itemVisible, setItemVisible] = useState(true)
@@ -10,20 +14,26 @@ export default function Item({nombre, desc, precio, categoria, imagen, stock, id
     const [cartBuyVIsible, setCartBuyVisible] = useState(true)
     const [itemsCount, setItemsCount] = useState(0)
     const history = useHistory()
+    const {onAdd} = useContext(AppCacheContext)
 
-    const onAdd = (count) => {
+    const agregar = (props) => {
+      setCartBuyVisible(true)
+      setItemsCount(props.unidades)
+      onAdd({id, nombre, precio}, props.unidades)
+      console.log(props.unidades);
+    }
+   /*  const onAdd = (count) => {
 
     setItemsCount(count)
     console.log(count)
     console.log('se ejecuto');
-    }
+    } */
 
     const onAddToCart = () => {
     if (itemsCount != 0) {
         setItemVisible(false)
         setCartButtonsVisible(false)
         setCartBuyVisible(false)
-
     } else {
         alert('Debes agregar al menos una unidad')
 
@@ -54,7 +64,7 @@ export default function Item({nombre, desc, precio, categoria, imagen, stock, id
                <Card.Text className="text-primary">
                  $ {precio}
                </Card.Text>
-               {itemVisible && <ItemCount stock={stock} onAdd={onAdd}/>}{''}
+               {itemVisible && <ItemCount stock={stock} onAdd={agregar}/> } {''}
                {cartButtonsVisible && <Button onClick={onAddToCart} variant="warning" size="lg" className="btn-block mr-1 mt-1"  >Agregar al carrito</Button>}
                
                {!cartBuyVIsible && <Button onClick={onFinishBuy}>Finalizar Compra</Button>}

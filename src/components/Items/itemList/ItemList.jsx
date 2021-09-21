@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import data from '../../../data/data'
+// import data from '../../../data/data'
 import Item from '../../Items/itemList/item/Item'
 
 import { useParams } from 'react-router-dom'
 import SpinnerGlobal from '../../varios/Spiner'
+import { allItem, itemCat } from '../../../firebase/firebase'
 
 
 const ItemList = () => {
@@ -14,7 +15,45 @@ const ItemList = () => {
     const [cargando, setCargando] = useState(true)
 
     useEffect(() => {
-        const productos = () => {
+        if (categoria != null) {
+            const items =itemCat(categoria)
+            items.then((data) => {
+                const itemsAux=[]
+                data.forEach(item => {
+                    itemsAux.push({
+                        id:item.id, 
+                        nombre: item.data().nombre, 
+                        desc: item.data().desc,
+                        precio: item.data().precio,
+                        categoria: item.data().categoria,
+                        stock: item.data().stock,
+                        imagen: item.data().imagen,
+                    }); 
+                });
+                setProductos(itemsAux);
+                setCargando(false);
+            })
+        } else {
+            const items =allItem()
+            items.then((data) => {
+                const itemsAux=[]
+                data.forEach(item => {
+                    itemsAux.push({
+                        id:item.id, 
+                        nombre: item.data().nombre, 
+                        desc: item.data().desc,
+                        precio: item.data().precio,
+                        categoria: item.data().categoria,
+                        stock: item.data().stock,
+                        imagen: item.data().imagen,
+                    });
+                });
+                setProductos(itemsAux);
+                setCargando(false);
+            })
+             
+        }
+       /*  const productos = () => {
             return new Promise((resolve, reject) => {
                 setCargando(true)
                 setTimeout(() => {
@@ -34,7 +73,7 @@ const ItemList = () => {
                 setCargando(false)
             }
             
-        })
+        }) */
     },[categoria])
 
     return(
