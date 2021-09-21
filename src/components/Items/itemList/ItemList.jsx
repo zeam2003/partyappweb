@@ -39,11 +39,14 @@ const ItemList = () => {
 
     return(
         <>
+        <h1 className="btn-rosa text-center text-capitalize">{categoria}</h1>
         {cargando ? <SpinnerGlobal></SpinnerGlobal>
              :
+        
         productos.map((producto)=> 
-            <Item key={producto.id} nombre={producto.nombre} desc={producto.desc} precio={producto.precio} categoria={producto.categoria} stock={producto.stock} id={producto.id}/>
+            <Item key={producto.id} nombre={producto.nombre} desc={producto.desc} precio={producto.precio} categoria={producto.categoria} stock={producto.stock} imagen={producto.imagen} id={producto.id}/>
         )
+        
         }
         </>
     )

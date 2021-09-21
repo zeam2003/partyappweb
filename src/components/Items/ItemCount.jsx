@@ -38,13 +38,12 @@ export default function ItemCount ({ stock, onAdd = () => {}}) {
         <Container fluid>
             <Row>
                 <div className="text-center">
-                    <Button onClick={handleStock.sumaStock}  disabled={stockPropio === '0'} variant="outline-secondary">+</Button>
+                    <Button onClick={handleStock.restaStock}  disabled={stockPropio === '0'} variant="outline-secondary">-</Button>
                     
-                    <div className="inlineB counter1"><span>{unidades}</span>  </div>{''}
-                    <Button onClick={handleStock.restaStock}  disabled={stockPropio === '0'} variant="outline-secondary">-</Button>{' '}
-                    <p>Stock Disponible: {stock}</p>
-                    <p>{unidades}</p>
-                    </div>
+                    <div className="inlineB counter1"><span className="mt-1">{unidades}</span>  </div>{''}
+                    <Button onClick={handleStock.sumaStock} disabled={stockPropio === '0'} variant="outline-secondary">+</Button>{' '}
+                    <p>Stock Disponible: {stockPropio}</p>
+                </div>
             </Row>
         </Container> 
     )

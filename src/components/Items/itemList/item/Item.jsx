@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-export default function Item({nombre, desc, precio, categoria, stock, id}) {
+export default function Item({nombre, desc, precio, categoria, imagen, stock, id}) {
     const [itemVisible, setItemVisible] = useState(true)
     const [cartButtonsVisible, setCartButtonsVisible] = useState(true)
     const [cartBuyVIsible, setCartBuyVisible] = useState(true)
@@ -40,33 +40,31 @@ export default function Item({nombre, desc, precio, categoria, stock, id}) {
 
     return ( 
        <>
-       <div>
-            
-            <Card className="text-center">
-           
-            <Card.Header className="text-capitalize">{categoria}</Card.Header>
-            
-            <Card.Body>
-            <Link to={`/${categoria}/${id}`}>
-                <Card.Title>{nombre}</Card.Title>
-                <Card.Text>
-                {desc}
-                </Card.Text>
-            </Link>    
-                <Card.Text>
-                ${precio}
-                </Card.Text>
-                {itemVisible && <ItemCount stock={stock} onAdd={onAdd}/>}{''}
-                {cartButtonsVisible && <Button onClick={onAddToCart} className="inlineB" variant="warning">Agregar al carrito</Button>}
-                
-                {!cartBuyVIsible && <Button onClick={onFinishBuy}>Finalizar Compra</Button>}
-                
-                {itemsCount}
-            </Card.Body>
-            </Card>
-     
+       
+       <Row className="justify-content-md-center">
+       
+         <Col lg={4}>
+           <Card key={id} className="mt-5 mb-3">
+             <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/assets/images/${imagen}`} />
+             <Card.Body>
+               <Card.Title className="text-color-verde1">{nombre}</Card.Title>
+               <Card.Text className="text-color-verde2">
+                 {desc}
+               </Card.Text>
+               <Card.Text className="text-primary">
+                 $ {precio}
+               </Card.Text>
+               {itemVisible && <ItemCount stock={stock} onAdd={onAdd}/>}{''}
+               {cartButtonsVisible && <Button onClick={onAddToCart} variant="warning" size="lg" className="btn-block mr-1 mt-1"  >Agregar al carrito</Button>}
+               
+               {!cartBuyVIsible && <Button onClick={onFinishBuy}>Finalizar Compra</Button>}
+             </Card.Body>
+           </Card>
+         </Col>
       
-       </div>
+     </Row>
+
+      
        </>
     )
     

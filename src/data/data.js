@@ -6,7 +6,7 @@ const data = [{
         categoria: 'tortas',
         stock: '15',
         negocio: 'Pepe Tortas',
-        imagen: './iamges/tortabrownie.jpg'
+        imagen: 'tortas/tortas_sbrownie.png'
     },
     {
         id: '2',
@@ -16,7 +16,7 @@ const data = [{
         categoria: 'tortas',
         stock: '12',
         negocio: 'Tor-tita',
-        imagen: './iamges/tortatentacion.jpg'
+        imagen: 'tortas/tortas_tentc.png'
     },
     {
         id: '3',
@@ -26,7 +26,7 @@ const data = [{
         categoria: 'tortas',
         stock: '5',
         negocio: 'Delicadas',
-        imagen: './iamges/cheesecake.jpg'
+        imagen: 'tortas/tortas_cck.png'
     },
     {
         id: '4',
@@ -36,7 +36,7 @@ const data = [{
         categoria: 'pizzas',
         stock: '60',
         negocio: 'Don Pizza',
-        imagen: './iamges/jym.jpg'
+        imagen: 'pizzas/pizzas_jym.png'
     },
     {
         id: '5',
@@ -46,7 +46,7 @@ const data = [{
         categoria: 'pizzas',
         stock: '100',
         negocio: 'Don Pizza',
-        imagen: './iamges/muzza.jpg'
+        imagen: 'pizzas/pizzas_muzza.png'
     },
     {
         id: '6',
@@ -56,7 +56,7 @@ const data = [{
         categoria: 'pizzas',
         stock: '20',
         negocio: 'Don Pizza',
-        imagen: './iamges/mc.jpg'
+        imagen: 'pizzas/pizzas_mex_carne.png'
     },
     {
         id: '7',
@@ -66,7 +66,7 @@ const data = [{
         categoria: 'pizzas',
         stock: '20',
         negocio: 'Don Pizza',
-        imagen: './iamges/mc.jpg'
+        imagen: 'pizzas/pizzas_blanca.png'
     },
     {
         id: '8',
@@ -116,7 +116,7 @@ const data = [{
         categoria: 'empanadas',
         stock: '120',
         negocio: 'El Noble',
-        imagen: './iamges/cc.jpg'
+        imagen: 'empanadas/empanadas_carne_clasica.png'
     },
     {
         id: '13',
@@ -126,7 +126,7 @@ const data = [{
         categoria: 'empanadas',
         stock: '120',
         negocio: 'El Noble',
-        imagen: './iamges/ccc.jpg'
+        imagen: 'empanadas/empanadas_carne_cortada.png'
     },
     {
         id: '14',
@@ -136,7 +136,7 @@ const data = [{
         categoria: 'empanadas',
         stock: '120',
         negocio: 'El Noble',
-        imagen: './iamges/cp.jpg'
+        imagen: 'empanadas/empanadas_carne_picante.png'
     },
     {
         id: '15',
@@ -146,7 +146,7 @@ const data = [{
         categoria: 'catering',
         stock: '120',
         negocio: 'La Fabrica',
-        imagen: './iamges/smjyqs24.jpg'
+        imagen: 'catering/catering_s24s.png'
     },
     {
         id: '16',
@@ -156,7 +156,7 @@ const data = [{
         categoria: 'catering',
         stock: '120',
         negocio: 'La Fabrica',
-        imagen: './iamges/smjyqt24.jpg'
+        imagen: 'catering/catering_s24t.png'
     },
     {
         id: '17',
@@ -166,7 +166,7 @@ const data = [{
         categoria: 'catering',
         stock: '120',
         negocio: 'La Fabrica',
-        imagen: './iamges/msg.jpg'
+        imagen: 'catering/catering_sgm.png'
     },
     {
         id: '18',
@@ -176,7 +176,7 @@ const data = [{
         categoria: 'cotillon',
         stock: '10',
         negocio: 'CyP',
-        imagen: './iamges/ccl.jpg'
+        imagen: 'cotillon/cotillo_cluminosox60.png'
     },
     {
         id: '19',
@@ -186,7 +186,7 @@ const data = [{
         categoria: 'cotillon',
         stock: '4',
         negocio: 'CyP',
-        imagen: './iamges/kdc.jpg'
+        imagen: 'cotillon/cotillon_kit_decox60.png'
     },
     {
         id: '20',
@@ -196,7 +196,7 @@ const data = [{
         categoria: 'cotillon',
         stock: '11',
         negocio: 'CyP',
-        imagen: './iamges/cm.jpg'
+        imagen: 'cotillon/cotillon_cortina_metalizadax60.png'
     }
 
 ]

@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.w-60 {
+  max-width: 60%;
+}
+
+.carousel-captionB {
+  top: 82%;
+}
+
+.text-color-verde1 {
+  color: #0A4F51;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.text-color-verde2 {
+  color: #0A4F51;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.btn-rosa {
+  color: #BB33A7;
+  background-color: #FBD9F8;
+  border-color: #f89af0;
+}
